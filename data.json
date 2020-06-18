@@ -1,0 +1,60 @@
+{
+  "events": {
+    "-Kd_teAAXcw2b5MyFPIT": {
+      "event_details": {
+          "event_name": "Event 1",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "23"
+      }
+    },
+    "-Kd_ZCjRYSGzISxY_5Wi": {
+      "event_details": {
+          "event_name": "Event 2",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "23"
+      }
+    },
+    "-Kda3ClE2i0vZzyh7uh0": {
+      "event_details": {
+          "event_name": "Event 3",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "0"
+      }
+    },
+    "-Kda8nknT6-XyJE_SjCl": {
+      "event_details": {
+          "event_name": "Event 4",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "23"
+      }
+    },
+    "-KdeN0Yk89J4l5hMJ6Ea": {
+      "event_details": {
+          "event_name": "Event 5",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "23"
+      }
+    },
+    "-KdWbLKO0uZ0W5LYe9gj": {
+      "event_details": {
+          "event_name": "Event 6",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "0"
+      }
+    },
+    "-KdWI6HAF0_wh9-NTEpe": {
+      "event_details": {
+          "event_name": "Event 7",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "23"
+      }
+    },
+    "-KdWPnObbAbjd9lHX___": {
+      "event_details": {
+          "event_name": "Event 8",
+	  "date_of_event": "23-May-2020",
+	  "no_of_seats_available": "23"
+      }
+    }
+  }
+}
