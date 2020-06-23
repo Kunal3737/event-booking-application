@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "react-modal";
 import styles from "../EventBooking/EventBooking.module.css";
 import { connect } from "react-redux";
 import eventBookingAction from "../../actions/eventBookingAction";
@@ -14,9 +15,11 @@ const initialState = {
   phoneNoError: "",
   noOfSeatsError: "",
   nameOfAttendeeError: "",
-  ticketsBooked: ""
+  ticketsBooked: "",
+  isModal: false,
 };
 
+Modal.setAppElement("#root");
 class EventBooking extends Component {
   constructor(props) {
     super(props);
@@ -52,12 +55,10 @@ class EventBooking extends Component {
     if (!this.state.noOfSeats) {
       noOfSeatsError = "*Please enter the number of seats";
     }
-    const no_of_seats_available = parseInt(this.props.eventbookingData.event_details.no_of_seats_available);
-    // console.log(typeof(no_of_seats_available));
-    if (
-      this.state.noOfSeats >
-      no_of_seats_available
-    ) {
+    const no_of_seats_available = parseInt(
+      this.props.eventbookingData.event_details.no_of_seats_available
+    );
+    if (this.state.noOfSeats > no_of_seats_available) {
       noOfSeatsError = "*Number of seats selected is more than available seats";
     }
 
@@ -81,10 +82,10 @@ class EventBooking extends Component {
     e.preventDefault();
     const isValid = this.validateForm();
     if (isValid) {
-      this.setState(initialState);
       this.setState({
-        ticketsBooked: "*Tickets Booked"
-      })
+        ticketsBooked: "*Tickets Booked",
+        isModal: true,
+      });
       document.getElementById("submitButton").disabled = true;
       document.getElementById("cancelButton").disabled = true;
       console.log(this.state);
@@ -104,10 +105,17 @@ class EventBooking extends Component {
 
   cancelSubmission = (e) => {
     e.preventDefault();
-    console.log(this.props.history.push("/"));
-  }
+    this.props.history.push("/");
+  };
 
   render() {
+    const customStyles = {
+      content: {
+        color: "black",
+        textAlign: "center",
+      },
+    };
+
     return (
       <div className={styles.eventBookingContainer}>
         {this.props.eventbookingData &&
@@ -117,7 +125,7 @@ class EventBooking extends Component {
               className={styles.innerBookingContainer}
             >
               <h1>{items[1].event_name}</h1>
-              <div className={styles.ticketsBooked}>{this.state.ticketsBooked}</div>
+
               <p>Number of available seats: {items[1].no_of_seats_available}</p>
               <div className={styles.eventBookingContent}>
                 <span className={styles.leftBookingContainer}>
@@ -143,7 +151,9 @@ class EventBooking extends Component {
                           this.setState({ name: e.target.value });
                         }}
                       />
-                      <div className={styles.errorlogs}>{this.state.nameError}</div>
+                      <div className={styles.errorlogs}>
+                        {this.state.nameError}
+                      </div>
                     </div>
                     <br />
 
@@ -161,7 +171,9 @@ class EventBooking extends Component {
                           this.setState({ email: e.target.value });
                         }}
                       />
-                      <div className={styles.errorlogs}>{this.state.emailError}</div>
+                      <div className={styles.errorlogs}>
+                        {this.state.emailError}
+                      </div>
                     </div>
                     <br />
 
@@ -181,7 +193,9 @@ class EventBooking extends Component {
                           this.setState({ phoneNo: e.target.value });
                         }}
                       />
-                      <div className={styles.errorlogs}>{this.state.phoneNoError}</div>
+                      <div className={styles.errorlogs}>
+                        {this.state.phoneNoError}
+                      </div>
                     </div>
                     <br />
 
@@ -202,26 +216,33 @@ class EventBooking extends Component {
                         <option value="5">5</option>
                         <option value="6">6</option>
                       </select>
-                      <div className={styles.errorlogs}>{this.state.noOfSeatsError}</div>
+                      <div className={styles.errorlogs}>
+                        {this.state.noOfSeatsError}
+                      </div>
                     </div>
                     <br />
-                    
+
+                    <div className={styles.test}>{items.key}</div>
                     <div className={styles.label}>
                       <label htmlFor="nameOfAttendee">
-                        Name of Attendee 2:
+                        Name of Attendee #2:
                       </label>
                     </div>
                     <div className={styles.input}>
                       <input
                         value={this.state.nameOfAttendee}
                         onChange={(e) => {
-                          this.setState({ nameOfAttendee: e.target.value });
+                          this.setState({
+                            nameOfAttendee: e.target.value,
+                          });
                         }}
                         type="text"
                         id="nameOfAttendee"
                         name="nameOfAttendee"
                       />
-                      <div className={styles.errorlogs}>{this.state.nameOfAttendeeError}</div>
+                      <div className={styles.errorlogs}>
+                        {this.state.nameOfAttendeeError}
+                      </div>
                     </div>
                     <br />
 
@@ -232,7 +253,11 @@ class EventBooking extends Component {
                     >
                       Submit
                     </button>
-                    <button id="cancelButton" className={styles.eventBookingButtons} onClick={this.cancelSubmission}>
+                    <button
+                      id="cancelButton"
+                      className={styles.eventBookingButtons}
+                      onClick={this.cancelSubmission}
+                    >
                       Cancel
                     </button>
                   </form>
@@ -240,6 +265,59 @@ class EventBooking extends Component {
               </div>
             </div>
           ))}
+
+        <Modal isOpen={this.state.isModal} style={customStyles}>
+          <div className={styles.outerModal}>
+            <div className={styles.ticketsBooked}>
+              {this.state.ticketsBooked}
+            </div>
+            <div className={styles.innerWrapper}>
+              <span className={styles.modalHeading}>Name:</span>
+              <span className={styles.modalValues}>{this.state.name}</span>
+            </div>
+            <hr />
+
+            <div className={styles.innerWrapper}>
+              <span className={styles.modalHeading}>Email:</span>
+              <span className={styles.modalValues}>{this.state.email}</span>
+            </div>
+            <hr />
+
+            <div className={styles.innerWrapper}>
+              <span className={styles.modalHeading}>Phone:</span>
+              <span className={styles.modalValues}>{this.state.phoneNo}</span>
+            </div>
+            <hr />
+
+            <div className={styles.innerWrapper}>
+              <span className={styles.modalHeading}>Number of Seats:</span>
+              <span className={styles.modalValues}>{this.state.noOfSeats}</span>
+            </div>
+            <hr />
+
+            <div className={styles.innerWrapper}>
+              <span className={styles.modalHeading}>Name of Attendee:</span>
+              <span className={styles.modalValues}>
+                {this.state.nameOfAttendee}
+              </span>
+            </div>
+            <hr />
+
+            <button
+              className={styles.okaybutton}
+              onClick={(e) => {
+                e.preventDefault();
+                this.setState(initialState);
+                this.setState({
+                  isModal: false,
+                });
+                this.props.history.push("/");
+              }}
+            >
+              OKAY
+            </button>
+          </div>
+        </Modal>
       </div>
     );
   }

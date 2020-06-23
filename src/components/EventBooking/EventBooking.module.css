@@ -1,122 +1,162 @@
 .eventBookingContainer {
-    margin: auto;
-    height: 100vh;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: auto;
+  height: 100vh;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .innerBookingContainer {
-    border: white 2px solid;
-    height: 80%;
-    width: 90%;
+  border: white 2px solid;
+  height: 80%;
+  width: 90%;
 }
 
 .eventBookingContent {
-    border: white 2px solid;
-    height: 70%;
-    width: 80%;
-    margin: auto;
-    display: flex;  
+  border: white 2px solid;
+  height: 70%;
+  width: 80%;
+  margin: auto;
+  display: flex;
 }
 
 .leftBookingContainer {
-    /* border: green solid; */
-    width: 35%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* border: green solid; */
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageBorder {
-    border: white 2px solid;
-    height: 50%;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border: white 2px solid;
+  height: 50%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageRound {
-    border: white 2px solid;
-    height: 55%;
-    width: 60%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border: white 2px solid;
+  height: 55%;
+  width: 60%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rightBookingContainer {
-    /* border: yellow solid; */
-    width: 65%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* border: yellow solid; */
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
 input {
-    color: black;
-    /* width: 50%; */
+  color: black;
+  /* width: 50%; */
 }
 
 .eventBookingButtons {
-    color: black;
-    margin: 15px 10px 0 0;
-    height: 30px;
-    width: 100px;
-    background-color: #aaa;
+  color: black;
+  margin: 15px 10px 0 0;
+  height: 30px;
+  width: 100px;
+  background-color: #aaa;
 }
 
 form {
-    /* border: blueviolet 2px solid; */
-    width: 100%;
-    
+  /* border: blueviolet 2px solid; */
+  width: 100%;
 }
 
 .label {
-    float: left;
-    /* border: blue 1px solid; */
-    width: 40%;
-    margin-top: 10px;
+  float: left;
+  /* border: blue 1px solid; */
+  width: 40%;
+  margin-top: 10px;
 }
 
 .input {
-    float: left;
-    width: 60%;
-    margin-top: 10px;
-    /* border: blue 1px solid; */
+  float: left;
+  width: 60%;
+  margin-top: 10px;
+  /* border: blue 1px solid; */
 }
 
 .input > input {
-    height: 25px;
+  height: 25px;
 }
 
-select, option {
-    color: black;
-    width: 63%;
-    height: 30px;
+select,
+option {
+  color: black;
+  width: 66%;
+  height: 30px;
 }
 
 .ticketsBooked {
-    color: red
+  color: red;
 }
 
 .errorlogs {
-    color: red;
+  color: red;
 }
 
 @media screen and (max-width: 600px) {
-    .label, .input, button {
-      width: 60%;
-      margin-top: 0;
-      float: left;
-    }
+  .label,
+  .input,
+  button {
+    width: 60%;
+    margin-top: 0;
+    float: left;
   }
+}
+
+.outerModal {
+  border: #aaa 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60vh;
+  width: 60%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.modalHeading {
+  color: black;
+}
+
+.modalValues {
+  color: red;
+}
+
+.innerWrapper {
+  /* border: green 2px solid; */
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  height: 5%;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.okaybutton {
+  align-self: center;
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  background-color: #aaa;
+}
+
 /* Css for Form */
 /* * {
     box-sizing: border-box;
@@ -160,16 +200,16 @@ select, option {
     width: 75%;
     margin-top: 6px;
   } */
-  
-  /* Clear floats after the columns */
-  /* .row:after {
+
+/* Clear floats after the columns */
+/* .row:after {
     content: "";
     display: table;
     clear: both;
   } */
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  /* @media screen and (max-width: 600px) {
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {
       width: 100%;
       margin-top: 0;

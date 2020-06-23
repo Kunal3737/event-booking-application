@@ -1,65 +1,65 @@
 * {
-    color: white
+  color: white;
 }
 
 .searchBar {
-    margin: 5% auto;
-    width: 70%;
-    height: 30px;
-    font-size: larger;
-    color: black;
-    text-align: center;
+  margin: 5% auto;
+  width: 70%;
+  height: 30px;
+  font-size: larger;
+  color: black;
+  text-align: center;
 }
 
 .eventDetailContainer {
-    /* border: 2px solid white; */
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
+  /* border: 2px solid white; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .innerCardContainer {
-    border: white 2px solid;
-    width: 23%;
-    height: 200px;
-    margin: 5px;
-    padding: 3px 5px;
+  /* display: flex; */
+  border: white 2px solid;
+  width: 23%;
+  height: 200px;
+  margin: 5px;
+  padding: 3px 5px;
 }
 
 .imageAndDetails {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .imageSquare {
-    border: white solid 2px;
-    height: 130px;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  border: white solid 2px;
+  height: 130px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageRound {
-    border: white 2px solid;
-    border-radius: 50%;
-    height: 100px;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: white 2px solid;
+  border-radius: 50%;
+  height: 100px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .otherDetails {
-    /* border: green 2px solid; */
-    width: 50%;
-    padding: 0;
+  /* border: green 2px solid; */
+  width: 50%;
+  padding: 0;
 }
 
 .eventListingButtons {
-    color: black;
-    width: 80%;
-    height: 30px;
+  color: black;
+  width: 80%;
+  height: 30px;
 }

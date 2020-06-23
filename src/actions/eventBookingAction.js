@@ -9,10 +9,11 @@ const eventBookingAction = (eventId) => {
       )
       .then((response) => {
         console.log("RESPONSE", response.data);
-        response.data && dispatch({
-          type: "EVENT_BOOKING_RESPONSE",
-          payload: response.data,
-        });
+        response.data &&
+          dispatch({
+            type: "EVENT_BOOKING_RESPONSE",
+            payload: response.data,
+          });
       })
       .catch((error) => {
         dispatch({

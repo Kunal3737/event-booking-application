@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import EventListing from './components/EventListing/EventListing';
-import EventBooking from './components/EventBooking/EventBooking';
-import './App.css';
+import EventListing from "./components/EventListing/EventListing";
+import EventBooking from "./components/EventBooking/EventBooking";
+import "./App.css";
 
 function App() {
   return (
